@@ -4,89 +4,137 @@
       <div>
           <nav-bar ref="navBar"/>
       </div>
-      <div class="absolute body p-6 top-[80px] h-max">
-          <section class="bg-img body place-content-center mx-auto">
-
-              <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-5 padding-nav">
-                  <frosted-card
-                          class="card-height text-slate-400 col-span-3 md:col-start-2 lg:col-start-2 xl:col-start-2 h-auto"
-                          title="About Us"
-                  >
-                      <p class="text-slate-300 text-base">
-                        <div class="relative slide float-left pr-5"  style="width: 50%">
-                            <image-carousel/>
-                        </div>
-                          Ultimate 4x4 Specialists offer a comprehensive premium and budget service that will give you a significant saving without compromising on quality and workmanship.
-
-                          Our fully trained factory qualified technicians each have over 20 years experience in franchised main dealerships and each specialising solely in Land Rover's since 1995.
-
-                          We service and repair all modern Land Rover vehicles to the very highest of standards, offering a choice of genuine or quality pattern spares and parts as well as a T4 Diagnostics service that significantly undercuts main dealership prices.
-
-                          Our fixed price menu servicing follows the original Land Rover specification for each model with a labour rate less than half that charged by the main dealers.
-
-                          Ultimate 4x4 Specialists offer a collection and delivery service to most parts of the West Midlands area. For an informal enquiry with absolutely no commitment please call us now on 01384 211688, email  Ultimate 4x4 Specialists or fill out the contact form here you will not be disappointed with our quality standards, service and price.
-
-                          Ultimate 4x4 Specialists
-
-                          Ultimate 4x4 Specialists offer a viable alternative to main dealerships with a modern functional workshop and fully trained and qualified technicians.
-
-                          Our substantial client database contains thousands of satisfied customers from all over the central England area.
-
-                          Find out more about Ultimate 4x4 Specialists and how we can help you save money without comprimising on quality and workmanship by calling us now on 01384 211688, emailing us by clicking here or filling out the contact form here.
-
-                          We can guarantee that you will not be disappointed with our expert knowledge and attention to detail. Ultimate 4x4 Specialists are based in the heart of the Black Country with easy access from the M5, M6 and M42 motorways - click here to find us.
-                      </p>
-                  </frosted-card>
-                  <frosted-card
-                          class="card-height text-slate-400 md:col-start-5 lg:col-start-5 xl:col-start-5 h-auto"
-                          title="How to find us?"
-                  >
-                      <div id="map-wrap" style="height: 300px">
-                          <client-only>
-                              <l-map :zoom=50 :center="[53.339483271389895, -6.27155181614453]">
-                                  <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
-                                  <l-marker :lat-lng="[53.339483271389895, -6.27155181614453]"></l-marker>
-                              </l-map>
-                          </client-only>
-                      </div>
-                      <br>
-                      <address>
-                          67 Victoria Terrace<br>
-                          Stafford<br>
-                          ST16 1FA<br>
-                          UK
-                      </address>
-                  </frosted-card>
+      <div class="absolute body p-2 top-[80px] h-max" style="z-index: -1">
+          <section class="body place-content-center mx-auto">
+              <div class="p-3 grid grid-cols-1 lg:grid-cols-10 padding-nav">
+                  <div  v-if="!isFinite(windowHeight)"  class=" left-1/2  fixed"  style="transform: translate(-50%);">
+                      <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                  </div>
+                  <NuxtPage v-if="isFinite(windowHeight)" />
               </div>
           </section>
       </div>
+      <page-footer/>
   </div>
 </template>
 <script setup lang="ts">
 import NavBar from "~/components/NavBar.vue";
-import ImageCarousel from "~/components/ImageCarousel.vue";
 
 const navBar = ref(null)
 const navBarHeight = useElementSize(navBar).height
 const windowHeight = useWindowSize().height
 
 const bodyHeight = computed (() => {
-    return (windowHeight.value - navBarHeight.value)
+    return (isFinite(windowHeight.value) ? (windowHeight.value - navBarHeight.value) - 210 : 0) + 'px'
 })
+
+provide("bodyHeight", bodyHeight);
+
 
 </script>
 <style scoped>
-.background {
-    background-repeat:  no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size:  cover;
-    background-color: #000000;
-    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    z-index: -1;
+::-webkit-scrollbar{
+    width: 6px;
 }
 
+::-webkit-scrollbar-track-piece{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #626262;
+    outline: 2px solid rgba(255, 255, 255, 0);
+    outline-offset: -2px;
+    border-radius: 5px;
+    border: .1px solid #626262;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #909090;
+}
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+    margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+}
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+}
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+}
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+}
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+}
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+}
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+}
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 </style>
