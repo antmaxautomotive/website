@@ -15,6 +15,6 @@ export default defineNuxtConfig({
         ]
     },
     app: {
-        baseURL: '/antmax/'
+        baseURL: '/qbiak-code.github.io/'
     }
 })
