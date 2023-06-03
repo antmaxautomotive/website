@@ -14,4 +14,12 @@ export default defineNuxtConfig({
             '@fortawesome/vue-fontawesome'
         ]
     },
+    runtimeConfig: {
+        public: {
+            baseURL: 'https://Qbiak-code.github.io/',
+        }
+    },
+    app: {
+        baseURL: '/antmax/' // baseURL: '/<repository>/'
+    }
 })
