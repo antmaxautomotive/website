@@ -15,6 +15,6 @@ export default defineNuxtConfig({
         ]
     },
     app: {
-        baseURL: '/qbiak-code.github.io/'
+        baseURL: '/website/'
     }
 })
