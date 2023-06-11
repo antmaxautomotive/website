@@ -22,7 +22,7 @@ export default defineNuxtConfig({
             },
         },
     },
-/*    app: {
-        baseURL: '/website/'
-    },*/
+    app: {
+        baseURL: '/antmax_route/'
+    },
 })
