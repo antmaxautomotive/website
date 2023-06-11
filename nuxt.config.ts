@@ -12,9 +12,17 @@ export default defineNuxtConfig({
     build: {
         transpile: [
             '@fortawesome/vue-fontawesome'
-        ]
+        ],
+        postcss: {
+            postcssOptions: {
+                plugins: {
+                    tailwindcss: {},
+                    autoprefixer: {},
+                },
+            },
+        },
     },
-    app: {
+/*    app: {
         baseURL: '/website/'
-    }
+    },*/
 })

@@ -25,3 +25,10 @@
         </p>
     </frosted-card>
 </template>
+<script setup lang="ts">
+const title = ref('Repairs')
+
+useHead({
+    title
+})
+</script>

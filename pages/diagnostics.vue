@@ -28,6 +28,11 @@
         </p>
     </frosted-card>
 </template>
-<script setup>
+<script setup lang="ts">
 import ImageCarousel from "~/components/ImageCarousel.vue";
+const title = ref('Diagnostics')
+
+useHead({
+    title
+})
 </script>

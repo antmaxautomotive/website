@@ -28,3 +28,10 @@
         </p>
     </frosted-card>
 </template>
+<script setup lang="ts">
+const title = ref('Home')
+
+useHead({
+    title
+})
+</script>

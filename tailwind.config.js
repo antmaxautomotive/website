@@ -14,9 +14,9 @@ export default defineNuxtConfig({
     },
     content: [
         './src/**/*.{html,js}',
-        './node_modules/tw-elements/dist/js/**/*.js'
-    ],
-    plugins: [
-        require('tw-elements/dist/plugin')
+        "./components/**/*.{js,vue,ts}",
+        "./pages/**/*.vue",
+        "./plugins/**/*.{js,ts}",
+        "./nuxt.config.{js,ts}",
     ]
 })

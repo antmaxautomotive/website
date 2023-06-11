@@ -20,6 +20,9 @@
 <script setup lang="ts">
 import NavBar from "~/components/NavBar.vue";
 
+const titleTemplate = ref('%s - AntMax Automotive Ltd.')
+const description = ref('Independent Land Rover and Range Rover specialists.')
+
 const navBar = ref(null)
 const navBarHeight = useElementSize(navBar).height
 const windowHeight = useWindowSize().height
@@ -30,6 +33,13 @@ const bodyHeight = computed (() => {
 
 provide("bodyHeight", bodyHeight);
 
+useHead({
+    titleTemplate,
+    meta: [{
+        name: 'description',
+        content: description
+    }]
+})
 
 </script>
 <style scoped>
