@@ -4,9 +4,9 @@
       <div>
           <nav-bar ref="navBar"/>
       </div>
-      <div class="absolute body p-2 top-[80px] h-max" style="z-index: -1">
+      <div class="centered p-2" style="z-index: -1">
           <section class="body place-content-center mx-auto">
-              <div class="p-3 grid grid-cols-1 lg:grid-cols-10 padding-nav">
+              <div class="p-3 padding-nav">
                   <div  v-if="!isFinite(windowHeight)"  class=" left-1/2  fixed"  style="transform: translate(-50%);">
                       <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                   </div>
@@ -43,6 +43,17 @@ useHead({
 
 </script>
 <style scoped>
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 1024px;
+    min-width: 450px;
+    width: 80%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
 ::-webkit-scrollbar{
     width: 6px;
 }

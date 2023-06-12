@@ -66,9 +66,9 @@
         </span>
     </a>
     <a class="block fixed bottom-2 right-5"
-       href="https://www.google.co.uk/maps/place/Stafford/@52.8050787,-2.1505128,13z/data=!3m1!4b1!4m6!3m5!1s0x4870827f6d0b7d5f:0x1b47b3d511d85808!8m2!3d52.806693!4d-2.12066!16zL20vMDFyN2N0?entry=ttu" target="_blank">
+       href="https://goo.gl/maps/kxfvdpo7XPyPg5Kq8" target="_blank">
         <span class="mr-2 text-sm font-sans text-slate-300">
-          123 Street Name, Stafford, Staffordshire, ST11 1AA
+          Unit 5B St Albans Rd, Stafford, ST16 3DR
         </span>
         <span>
           <font-awesome-icon class="logo-blue-text" :icon="['fas', 'location-dot']" />
