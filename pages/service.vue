@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import ImageCarousel from "~/components/ImageCarousel.vue";
 
-const title = ref('Service')
+const title = ref('Service - ')
 
 useHead({
     title

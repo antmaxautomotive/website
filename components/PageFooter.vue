@@ -49,17 +49,17 @@
       </ul>
     </div>
       <!-- Mobile & Email-->
-    <a href="mailto: email@domain.com" class="block fixed bottom-8 right-5">
+    <a href="mailto: info@antmaxautomotive.co.uk" class="block fixed bottom-8 right-5">
         <span class="mr-2 text-sm font-sans text-slate-300">
-            email@domain.com
+            info@antmaxautomotive.co.uk
         </span>
         <span>
             <font-awesome-icon class="logo-blue-text" :icon="['fas', 'at']" />
         </span>
     </a>
-    <a href="tel: 0791 234 5678" class="block fixed bottom-14 right-5">
+    <a href="tel: 07511217222" class="block fixed bottom-14 right-5">
         <span class="mr-2 text-sm font-sans text-slate-300">
-            0791 234 5678
+            07511 217222
         </span>
         <span>
             <font-awesome-icon class="logo-blue-text" :icon="['fas', 'phone']" />

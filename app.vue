@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import NavBar from "~/components/NavBar.vue";
 
-const titleTemplate = ref('%s - AntMax Automotive Ltd.')
+const titleTemplate = ref('%s AntMax Automotive Ltd.')
 const description = ref('Independent Land Rover and Range Rover specialists.')
 
 const navBar = ref(null)

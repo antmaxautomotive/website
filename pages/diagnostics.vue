@@ -14,7 +14,7 @@
 </template>
 <script setup lang="ts">
 import ImageCarousel from "~/components/ImageCarousel.vue";
-const title = ref('Diagnostics')
+const title = ref('Diagnostics - ')
 
 useHead({
     title
