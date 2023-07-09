@@ -57,9 +57,9 @@
             <font-awesome-icon class="logo-blue-text" :icon="['fas', 'at']" />
         </span>
     </a>
-    <a href="tel: 07511217222" class="block fixed bottom-14 right-5">
+    <a href="tel: 07856618887" class="block fixed bottom-14 right-5">
         <span class="mr-2 text-sm font-sans text-slate-300">
-            07511 217222
+            07856 618887
         </span>
         <span>
             <font-awesome-icon class="logo-blue-text" :icon="['fas', 'phone']" />

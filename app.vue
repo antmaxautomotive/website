@@ -19,6 +19,9 @@
 </template>
 <script setup lang="ts">
 import NavBar from "~/components/NavBar.vue";
+import logo from '~/assets/ico.png'
+import logo512 from '~/assets/ico512.png'
+import logo32 from '~/assets/ico32.png'
 
 const titleTemplate = ref('%s AntMax Automotive Ltd.')
 const description = ref('Independent Land Rover and Range Rover specialists.')
@@ -35,10 +38,33 @@ provide("bodyHeight", bodyHeight);
 
 useHead({
     titleTemplate,
-    meta: [{
-        name: 'description',
-        content: description
-    }]
+    meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1'},
+        {
+            name: 'og:image',
+            content: logo512,
+        },
+        {
+            name: 'url',
+            content: 'https://antmaxautomotive.co.uk',
+        },
+        {
+            name: 'description',
+            content: description
+        },
+    ],
+    link: [
+        {
+            title: 'favicon', rel: 'icon', type: 'image/png', href: logo32,
+        },
+        {
+            title: 'mobileicon', rel: 'apple-touch-icon', sizes: '512x512', href: logo512,
+        },
+        {
+            title: 'mobileimage', rel: 'apple-touch-startup-image', href: logo,
+        }
+    ]
 })
 
 </script>
